@@ -7,6 +7,7 @@ public class GameMain : MonoBehaviour
     void Start()
     {
         WorldManager.Initialize();
+        WorldManager.CreateBattleWorld();
     }
 
     
