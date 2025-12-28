@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleWorld 
@@ -23,16 +24,18 @@ public class BattleWorld
     
     
     /// <summary>
-    /// 创建世界时调用
+    /// 初始化战斗世界
     /// </summary>
-    public void OnCreateWorld()
+    /// <param name="player_Data">玩家阵容数据</param>
+    /// <param name="enemy_Data">敌人阵容数据</param>
+    public void OnCreateWorld(List<HeroData> player_Data,List<HeroData> enemy_Data)
     {
         heroLogicCtrl = new HeroLogicCtrl();
         roundLogicCtrl = new RoundLogicCtrl();
-        heroLogicCtrl.OnCreate();
+        heroLogicCtrl.OnCreate(player_Data,enemy_Data);
         roundLogicCtrl.OnCreate();
-        
     }
+    
     public void OnUpdate()
     {
         //客户端需要正常进行战斗

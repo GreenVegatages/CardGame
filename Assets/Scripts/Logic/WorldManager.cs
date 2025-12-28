@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WorldManager 
@@ -35,7 +36,16 @@ public class WorldManager
     /// </summary>
     public static void CreateBattleWorld()
     {
+
+    }
+    /// <summary>
+    /// 创建战斗世界
+    /// </summary>
+    /// <param name="player_Data">玩家阵容数据</param>
+    /// <param name="enemy_Data">敌人阵容数据</param>
+    public static void CreateBattleWorld(List<HeroData> player_Data,List<HeroData> enemy_Data)
+    {
         _battleWorld = new BattleWorld();
-        _battleWorld.OnCreateWorld();
+        _battleWorld.OnCreateWorld(player_Data,enemy_Data);
     }
 }
