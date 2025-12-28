@@ -17,12 +17,12 @@ public class ResManager : Singleton<ResManager>
                 var obj = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(path),parent);
                 if (resetPosition)
                 {
-                        obj.transform.position = Vector3.zero;
+                        obj.transform.localPosition = Vector3.zero;
                 }
 
                 if (resetRotation)
                 {
-                        obj.transform.rotation = Quaternion.identity;
+                        obj.transform.localRotation = Quaternion.identity;
                 }
 
                 if (resetScale)
