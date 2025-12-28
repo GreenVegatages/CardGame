@@ -22,14 +22,15 @@ public class HeroLogicCtrl : ILogicBehaviour
 
     public void OnCreate(List<HeroData> player_Data, List<HeroData> enemy_Data)
     {
-        
+        CreateHerosByList(player_Data);
+        CreateHerosByList(enemy_Data);
     }
 
     public void CreateHerosByList(List<HeroData> data)
     {
         for (int i = 0; i < data.Count; i++)
         {
-            
+            ResManager.Instance.LoadPrefab("Prefabs/Hero/" + data[i].id);
         }
     }
     
