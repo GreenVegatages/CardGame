@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2046.4
     height: 1052.8
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 498}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 98
+  controlID: 25
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -590,13 +590,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -43502
-      - m_Data: -43498
-      - m_Data: -22514
       - m_Data: -1294
-      - m_Data: 66830
-      - m_Data: 66866
-      - m_Data: 66994
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -721,8 +715,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets
+    m_Folders: []
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -744,14 +737,19 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 51010
-    - m_Data: 51012
-    - m_Data: 51014
-    - m_Data: 51016
-    - m_Data: 51018
-    - m_Data: 51020
-    - m_Data: 51022
-    - m_Data: 51024
+    - m_Data: 51040
+    - m_Data: 51042
+    - m_Data: 51044
+    - m_Data: 51046
+    - m_Data: 51048
+    - m_Data: 51050
+    - m_Data: 51052
+    - m_Data: 51054
+    - m_Data: 51056
+    - m_Data: 51058
+    - m_Data: 51060
+    - m_Data: 51062
+    - m_Data: 51064
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -780,19 +778,24 @@ MonoBehaviour:
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 65784
+    - m_Data: -1294
     m_LastClickedID:
-      m_Data: 65784
+      m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 51010
-    - m_Data: 51012
-    - m_Data: 51014
-    - m_Data: 51016
-    - m_Data: 51018
-    - m_Data: 51020
-    - m_Data: 51022
-    - m_Data: 51024
+    - m_Data: 51040
+    - m_Data: 51042
+    - m_Data: 51044
+    - m_Data: 51046
+    - m_Data: 51048
+    - m_Data: 51050
+    - m_Data: 51052
+    - m_Data: 51054
+    - m_Data: 51056
+    - m_Data: 51058
+    - m_Data: 51060
+    - m_Data: 51062
+    - m_Data: 51064
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -820,8 +823,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 65784
-    m_LastClickedInstanceID: 65784
+    - m_Data: -1294
+    m_LastClickedInstanceID: -1294
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
