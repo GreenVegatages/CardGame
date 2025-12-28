@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// 打印类
+/// </summary>
 public static class Debuger
 {
     public static void Log(object message)

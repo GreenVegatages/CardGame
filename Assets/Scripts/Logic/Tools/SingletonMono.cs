@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// 单例mono类
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class SingletonMono<T> : MonoBehaviour where T : SingletonMono<T>
 {
         private static T _instance;
