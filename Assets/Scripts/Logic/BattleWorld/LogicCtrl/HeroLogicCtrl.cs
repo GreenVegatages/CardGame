@@ -23,9 +23,6 @@ public class HeroLogicCtrl : ILogicBehaviour
     public void OnCreate(List<HeroData> player_Data, List<HeroData> enemy_Data)
     {
 #if CLIENT_LOGIC
-        
-        
-        
         //创建玩家阵容
         CreateHerosByList(player_Data,BattleWorldNodes.Instance.player_Hero_Roots);
         //创建敌人阵容
