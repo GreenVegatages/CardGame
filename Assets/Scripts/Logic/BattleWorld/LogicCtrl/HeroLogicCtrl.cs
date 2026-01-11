@@ -5,6 +5,10 @@ using UnityEngine;
 /// </summary>
 public class HeroLogicCtrl : ILogicBehaviour
 {
+    public List<HeroLoigc> Player_Logic_List = new List<HeroLoigc>();
+    public List<HeroLoigc> Enemy_Logic_List = new List<HeroLoigc>();
+    public List<HeroLoigc> Hero_Logic_List = new List<HeroLoigc>();
+    
     public void OnCreate()
     {
         
@@ -24,16 +28,17 @@ public class HeroLogicCtrl : ILogicBehaviour
     {
 #if CLIENT_LOGIC
         //创建玩家阵容
-        CreateHerosByList(player_Data,BattleWorldNodes.Instance.player_Hero_Roots);
+        CreateHerosByList(Player_Logic_List,player_Data,BattleWorldNodes.Instance.player_Hero_Roots,E_HeroTeam.Player);
         //创建敌人阵容
-        CreateHerosByList(enemy_Data,BattleWorldNodes.Instance.enemy_Hero_Roots);
+        CreateHerosByList(Enemy_Logic_List,enemy_Data,BattleWorldNodes.Instance.enemy_Hero_Roots,E_HeroTeam.Enemy);
 #else
         //服务端不需要渲染逻辑
 
         //创建玩家阵容
-        CreateHerosByList(player_Data,null);
+        CreateHerosByList(Player_Logic_List,player_Data,null,E_HeroTeam.Player);
         //创建敌人阵容
-        CreateHerosByList(enemy_Data,null);
+        CreateHerosByList(Enemy_Logic_List,enemy_Data,null,E_HeroTeam.Enemy);
+
 #endif
     }
 
@@ -42,12 +47,24 @@ public class HeroLogicCtrl : ILogicBehaviour
     /// </summary>
     /// <param name="data"></param>
     /// <param name="root">阵容根位置</param>
-    public void CreateHerosByList(List<HeroData> data,Transform[] root)
+    public void CreateHerosByList(List<HeroLoigc> logicList,List<HeroData> data,Transform[] root,E_HeroTeam team)
     {
         for (int i = 0; i < data.Count; i++)
         {
-           var prefab = ResManager.Instance.LoadPrefab("Prefabs/Hero/" + data[i].id,root[data[i].seatid]
-           ,true,true,false);
+            var heroData = data[i]; 
+            HeroLoigc heroLoigc = new HeroLoigc(heroData,team);
+#if CLIENT_LOGIC
+            var prefab = ResManager.Instance.LoadPrefab("Prefabs/Hero/" + data[i].id,root[data[i].seatid]
+                ,true,true,false);
+            var heroRender = prefab.GetComponent<HeroRender>();
+            heroLoigc.SetRenderObject(heroRender);
+            heroRender.SetLogicObject(heroLoigc);
+            heroRender.SetHeroData(heroData);
+            heroRender.SetTeam(team);
+#endif
+           heroLoigc.OnCreate();
+           logicList.Add(heroLoigc);
+           Hero_Logic_List.Add(heroLoigc);
         }
     }
     

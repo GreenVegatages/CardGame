@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4800321673978128}
+  - component: {fileID: 5877076432320694392}
   m_Layer: 0
   m_Name: 104
   m_TagString: Untagged
@@ -34,6 +35,18 @@ Transform:
   - {fileID: 3501509331035593648}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5877076432320694392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154473061115152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337fa16cf0494ad2b25387e882d77163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroRender
 --- !u!1 &1218693216062894
 GameObject:
   m_ObjectHideFlags: 0
