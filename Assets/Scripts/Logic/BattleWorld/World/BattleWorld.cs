@@ -80,5 +80,6 @@ public class BattleWorld
     {
         heroLogicCtrl?.OnLogicFrameUpdate();
         roundLogicCtrl?.OnLogicFrameUpdate();
+        ActionManager.Instance?.OnLogicFrameUpdate();
     }
 }

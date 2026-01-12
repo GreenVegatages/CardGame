@@ -11,7 +11,7 @@ public class LogicBehaviour
     /// <summary>
     /// 逻辑位置
     /// </summary>
-    public VInt3  LogicPosition { get;protected set; }
+    public VInt3  LogicPosition { get; set; }
    
     
     public virtual void OnCreate()
