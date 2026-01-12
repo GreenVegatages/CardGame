@@ -12,7 +12,8 @@ public class RenderObject : MonoBehaviour
 
       public virtual void Update()
       {
-            
+            if (LogicObj == null) return;
+            transform.position = Vector3.Lerp(transform.position, LogicObj.LogicPosition.vec3,BattleWorld.DeltaTime);
       }
 
       public virtual void OnRelease()

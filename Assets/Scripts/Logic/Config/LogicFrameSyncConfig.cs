@@ -14,7 +14,7 @@
         /// <summary>
         /// 逻辑帧间隔Ms 
         /// </summary>
-        public static float LogicFrameIntervalMs = 66f;
+        public static int LogicFrameIntervalMs = 66;
 
 
 }

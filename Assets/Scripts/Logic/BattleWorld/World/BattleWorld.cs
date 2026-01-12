@@ -19,7 +19,7 @@ public class BattleWorld
     /// <summary>
     /// 动画插值时间
     /// </summary>
-    private float _deltaTime;
+    public static float DeltaTime { get;private set; }
     
     
     
@@ -51,18 +51,18 @@ public class BattleWorld
             _nextLogicFrameTime += LogicFrameSyncConfig.LogicFrameInterval;
             //逻辑帧id自增
             LogicFrameSyncConfig.LogicFrameId++;
-            Debug.Log("LogicFrameId: " + LogicFrameSyncConfig.LogicFrameId);
+            //Debug.Log("LogicFrameId: " + LogicFrameSyncConfig.LogicFrameId);
         }
         //计算帧间隔之间的插值
-        _deltaTime = (_accLogicRunTime + LogicFrameSyncConfig.LogicFrameInterval - _nextLogicFrameTime) /
+        DeltaTime = (_accLogicRunTime + LogicFrameSyncConfig.LogicFrameInterval - _nextLogicFrameTime) /
                      LogicFrameSyncConfig.LogicFrameInterval;
         
 #else
         //服务端直接进行战斗计算，服务端不需要渲染
         OnLogicFrameUpdate();
-#endif 
-        
+#endif
 
+        Test();
     }
     /// <summary>
     /// 销毁世界时调用
@@ -81,5 +81,29 @@ public class BattleWorld
         heroLogicCtrl?.OnLogicFrameUpdate();
         roundLogicCtrl?.OnLogicFrameUpdate();
         ActionManager.Instance?.OnLogicFrameUpdate();
+    }
+
+    public void Test()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            MoveToAction action = new MoveToAction(heroLogicCtrl.Hero_Logic_List[0],
+                heroLogicCtrl.Enemy_Logic_List[0].LogicPosition, 1000,
+                () =>
+                {
+                    Debuger.Log("Move Finish: " + heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
+                });
+            ActionManager.Instance.RunAction(action);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            MoveToAction action = new MoveToAction(heroLogicCtrl.Hero_Logic_List[0],
+                new VInt3(BattleWorldNodes.Instance.player_Hero_Roots[0].position), 1000,
+                () =>
+                {
+                    Debuger.Log("Move Finish: " + heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
+                });
+            ActionManager.Instance.RunAction(action);
+        }
     }
 }
