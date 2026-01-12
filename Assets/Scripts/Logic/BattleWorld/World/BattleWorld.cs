@@ -93,6 +93,7 @@ public class BattleWorld
                 {
                     Debuger.Log("Move Finish: " + heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
                 });
+            heroLogicCtrl.Hero_Logic_List[0].PlayAnimation("Attack");
             ActionManager.Instance.RunAction(action);
         }
         if (Input.GetKeyDown(KeyCode.W))

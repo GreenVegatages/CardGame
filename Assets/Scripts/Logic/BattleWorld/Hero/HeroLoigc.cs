@@ -2,6 +2,7 @@
 {
     public HeroData Data { get;private set; }
     public E_HeroTeam Team { get;private set; }
+    public HeroRender HeroRender { get;private set; }
     
     public HeroLoigc(HeroData data,E_HeroTeam team)
     {
@@ -16,11 +17,20 @@
     public override void OnCreate()
     {
         base.OnCreate();
+        HeroRender = RenderObj as  HeroRender;
         Debuger.Log(RenderObj.gameObject.name);
     }
 
     public override void OnLogicUpdate()
     {
         base.OnLogicUpdate();
+    }
+
+    public void PlayAnimation(string actionName)
+    {
+#if RENDER_LOGIC
+        HeroRender.PlayAnimation(actionName);
+#endif
+        
     }
 }
