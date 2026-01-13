@@ -96,6 +96,8 @@ public class BattleWorld
                     Debuger.Log("Move Finish: " + heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
                    var effect= ResManager.Instance.LoadPrefab<SkillEffect>("Prefabs/SkillEffect/Effect_banma_attack");
                    effect.SetEffectPosition(heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
+                   heroLogicCtrl.Enemy_Logic_List[0].DamageHp(10);
+                   Debuger.Log("blood: " + heroLogicCtrl.Enemy_Logic_List[0].Hp);
                 });
             heroLogicCtrl.Hero_Logic_List[0].PlayAnimation("Attack");
             ActionManager.Instance.RunAction(action);

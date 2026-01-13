@@ -42,6 +42,13 @@ public class HeroData
         /// 防御力
         /// </summary>
         public int def;
+
+
+        /// <summary>
+        /// 敏捷力
+        /// </summary>
+        public int agl;
+        
         
         /// <summary>
         /// 攻击回复怒气值

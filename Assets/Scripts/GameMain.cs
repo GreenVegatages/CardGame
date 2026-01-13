@@ -14,6 +14,7 @@ public class GameMain : MonoBehaviour
         for (int i = 0; i < heroIdList.Count; i++)
         {
             var data  = new HeroData();
+            data.hp = 100;
             data.id = heroIdList[i];
             if (i < 5)
             {
