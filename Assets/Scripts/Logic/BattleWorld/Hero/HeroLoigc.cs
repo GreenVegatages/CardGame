@@ -52,7 +52,11 @@
             return;
         }
         PlayAnimation("OnHit");
-        
+#if RENDER_LOGIC
+        float rate = hp.RawFloat / MaxHp.RawFloat;
+        HeroRender.UpdateHP_HUD(damagehp.RawInt,rate);
+#endif
+
     }
 
     public void Death()

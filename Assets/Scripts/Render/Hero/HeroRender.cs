@@ -1,5 +1,7 @@
 ﻿using System;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeroRender : RenderObject
 {
@@ -36,4 +38,25 @@ public class HeroRender : RenderObject
     {
         _animator.SetTrigger(actionName);
     }
+
+    public void UpdateHP_HUD(int damage,float rate)
+    {
+      var text=  ResManager.Instance.LoadPrefab(AssetPathConfig.HUD + (damage > 0 ? "DamageText" : "RestoreHPText"),BattleWorldNodes.Instance.HUD_Root,resetPosition:true);
+      var localPosition = WorldToCanvas(transform.position);
+      text.transform.localPosition = localPosition + new Vector3(0,10,0);
+      text.GetComponent<Text>().text = (damage > 0 ? "-" : "+")+ Mathf.Abs(damage).ToString();
+      
+      text.transform.DOLocalMoveY(text.transform.localPosition.y+50f,1f);
+      text.GetComponent<CanvasGroup>().DOFade(0, 0.5f).SetDelay(1.2f);
+      Destroy(text,3f);
+    }
+
+    public Vector3 WorldToCanvas(Vector3 worldPosition)
+    {
+        Vector2 targetPosition ;
+        Vector3 screenPoint=  RectTransformUtility.WorldToScreenPoint(BattleWorldNodes.Instance.Camera3D, worldPosition);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(BattleWorldNodes.Instance.HUD_Root as RectTransform, screenPoint, BattleWorldNodes.Instance.UICamera,out  targetPosition);
+        return targetPosition;
+    }
+
 }

@@ -14,4 +14,8 @@ public class BattleWorldNodes : SingletonMono<BattleWorldNodes>
         /// </summary>
         public Transform[] enemy_Hero_Roots;
 
+        public Transform HUD_Root;
+        
+        public Camera Camera3D;
+        public Camera UICamera;
 }
