@@ -87,11 +87,15 @@ public class BattleWorld
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Debuger.Log("start:"+Time.realtimeSinceStartup);
             MoveToAction action = new MoveToAction(heroLogicCtrl.Hero_Logic_List[0],
                 heroLogicCtrl.Enemy_Logic_List[0].LogicPosition, 1000,
                 () =>
-                {
+                { 
+                    Debuger.Log("end:"+Time.realtimeSinceStartup);
                     Debuger.Log("Move Finish: " + heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
+                   var effect= ResManager.Instance.LoadPrefab<SkillEffect>("Prefabs/SkillEffect/Effect_banma_attack");
+                   effect.SetEffectPosition(heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
                 });
             heroLogicCtrl.Hero_Logic_List[0].PlayAnimation("Attack");
             ActionManager.Instance.RunAction(action);

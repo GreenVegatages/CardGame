@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8961081189753225152}
-  - component: {fileID: 7642020867415045707}
+  - component: {fileID: 5227885521287378524}
   m_Layer: 0
   m_Name: Effect_hema_Skill
   m_TagString: Untagged
@@ -24,15 +24,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6499777814234186001}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.451612, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6466525646602764504}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7642020867415045707
+--- !u!114 &5227885521287378524
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +42,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6499777814234186001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac84bf2156bae0246842add29366d319, type: 3}
+  m_Script: {fileID: 11500000, guid: df4f9871203f2154b9c6641b476238ff, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillEffect
 --- !u!1 &8831621888334758746
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,19 +68,21 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8831621888334758746}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8889488554387768207}
   m_Father: {fileID: 8961081189753225152}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8886712541705268579
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6466525646602764504}
     m_Modifications:
     - target: {fileID: 1544531805529376, guid: 8370fc77c18a76549a8c34095e57aa1e, type: 3}
@@ -143,10 +146,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8370fc77c18a76549a8c34095e57aa1e, type: 3}
 --- !u!4 &8889488554387768207 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4010214495284972, guid: 8370fc77c18a76549a8c34095e57aa1e,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 4010214495284972, guid: 8370fc77c18a76549a8c34095e57aa1e, type: 3}
   m_PrefabInstance: {fileID: 8886712541705268579}
   m_PrefabAsset: {fileID: 0}
