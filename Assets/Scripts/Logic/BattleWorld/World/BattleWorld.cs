@@ -80,7 +80,8 @@ public class BattleWorld
     {
         heroLogicCtrl?.OnLogicFrameUpdate();
         roundLogicCtrl?.OnLogicFrameUpdate();
-        ActionManager.Instance?.OnLogicFrameUpdate();
+        ActionManager.Instance.OnLogicFrameUpdate();
+        TimerManager.Instance.OnLogicFrameUpdate();
     }
 
     public void Test()
@@ -92,13 +93,15 @@ public class BattleWorld
                 heroLogicCtrl.Enemy_Logic_List[0].LogicPosition, 1000,
                 () =>
                 { 
-                    Debuger.Log("end:"+Time.realtimeSinceStartup);
-                    Debuger.Log("Move Finish: " + heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
-                   var effect= ResManager.Instance.LoadPrefab<SkillEffect>("Prefabs/SkillEffect/Effect_banma_attack");
-                   effect.SetEffectPosition(heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
-                   heroLogicCtrl.Enemy_Logic_List[0].DamageHp(10);
-                   Debuger.Log("blood: " + heroLogicCtrl.Enemy_Logic_List[0].Hp);
+                    Debuger.Log("Move Finish end:"+Time.realtimeSinceStartup);
                 });
+            TimerManager.Instance.Delay(500, () =>
+            {
+                var effect= ResManager.Instance.LoadPrefab<SkillEffect>("Prefabs/SkillEffect/Effect_banma_attack");
+                effect.SetEffectPosition(heroLogicCtrl.Hero_Logic_List[0].LogicPosition);
+                heroLogicCtrl.Enemy_Logic_List[0].DamageHp(10);
+                Debuger.Log("blood end:"+Time.realtimeSinceStartup);
+            });
             heroLogicCtrl.Hero_Logic_List[0].PlayAnimation("Attack");
             ActionManager.Instance.RunAction(action);
         }
