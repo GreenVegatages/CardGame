@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class HeroRender : RenderObject
 {
+    
     public HeroData Data { get;private set; }
     public E_HeroTeam Team { get;private set; }
     
     private Animator _animator;
+    private HeroHUDComponent _heroHUDComponent;
+   
 
     private void Awake()
     {
@@ -20,6 +23,12 @@ public class HeroRender : RenderObject
         base.OnRelease();
     }
 
+    public override void Update()
+    {
+        base.Update();
+        
+    }
+
     public void SetHeroData(HeroData heroData)
     {
         this.Data = heroData;
@@ -28,6 +37,12 @@ public class HeroRender : RenderObject
     public void SetTeam(E_HeroTeam heroTeam)
     {
         this.Team = heroTeam;
+        _heroHUDComponent = ResManager.Instance.LoadPrefab<HeroHUDComponent>(AssetPathConfig.HUD+
+                                                                             (heroTeam == E_HeroTeam.Enemy
+                                                                                 ? "HPObjectEnemy"
+                                                                                 : "HPObjectSelf"),BattleWorldNodes.Instance.HUD_Root);
+        _heroHUDComponent.transform.localPosition = WorldToCanvas(LogicObj.LogicPosition.vec3);
+        _heroHUDComponent.Init(this);
     }
 
     public void Initialize()
@@ -49,6 +64,8 @@ public class HeroRender : RenderObject
       text.transform.DOLocalMoveY(text.transform.localPosition.y+50f,1f);
       text.GetComponent<CanvasGroup>().DOFade(0, 0.5f).SetDelay(1.2f);
       Destroy(text,3f);
+      
+      _heroHUDComponent.UpdateHPSlider(rate);
     }
 
     public Vector3 WorldToCanvas(Vector3 worldPosition)
@@ -58,5 +75,4 @@ public class HeroRender : RenderObject
         RectTransformUtility.ScreenPointToLocalPointInRectangle(BattleWorldNodes.Instance.HUD_Root as RectTransform, screenPoint, BattleWorldNodes.Instance.UICamera,out  targetPosition);
         return targetPosition;
     }
-
 }

@@ -2009,7 +2009,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 1065413756}
   m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -2342,7 +2343,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60.000004
-  orthographic: 0
+  orthographic: 1
   orthographic size: 7.86
   m_Depth: 1
   m_CullingMask:
@@ -3066,6 +3067,9 @@ MonoBehaviour:
   - {fileID: 884330260}
   - {fileID: 704917465}
   - {fileID: 777916000}
+  HUD_Root: {fileID: 1178102123632018978}
+  Camera3D: {fileID: 963194227}
+  UICamera: {fileID: 1065413756}
 --- !u!1 &1521939194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4900,7 +4904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1178102123632018983
 MonoBehaviour:
   m_ObjectHideFlags: 0
