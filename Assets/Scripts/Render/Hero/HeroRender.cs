@@ -11,7 +11,7 @@ public class HeroRender : RenderObject
     
     private Animator _animator;
     private HeroHUDComponent _heroHUDComponent;
-   
+    private Transform _hudTransform;
 
     private void Awake()
     {
@@ -26,9 +26,16 @@ public class HeroRender : RenderObject
     public override void Update()
     {
         base.Update();
-        
+        UpdateHUD();
     }
 
+    private void UpdateHUD()
+    {
+        if (_heroHUDComponent != null&& LogicObj!=null&& _hudTransform!=null)
+        {
+            _heroHUDComponent.transform.localPosition = WorldToCanvas(_hudTransform.position);
+        }
+    }
     public void SetHeroData(HeroData heroData)
     {
         this.Data = heroData;
@@ -41,13 +48,13 @@ public class HeroRender : RenderObject
                                                                              (heroTeam == E_HeroTeam.Enemy
                                                                                  ? "HPObjectEnemy"
                                                                                  : "HPObjectSelf"),BattleWorldNodes.Instance.HUD_Root);
-        _heroHUDComponent.transform.localPosition = WorldToCanvas(LogicObj.LogicPosition.vec3);
         _heroHUDComponent.Init(this);
     }
 
     public void Initialize()
     {
         _animator = GetComponentInChildren<Animator>();
+        _hudTransform = transform.GetChild(1);
     }
     public void PlayAnimation(string actionName)
     {
