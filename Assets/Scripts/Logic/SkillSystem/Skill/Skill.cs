@@ -3,6 +3,7 @@
     public int SkillId { get;private set; }
     public HeroLoigc SKillOwner { get;private set; }
     public bool IsNormalAtk { get;private set; }
+    public E_SkillState SkillState { get;private set; }
     public Skill(int skillId, LogicObject skillOwner, bool isNormalAtk)
     {
         this.SkillId = skillId;
@@ -14,12 +15,14 @@
     
     public void ReleaseSkill()
     {
-        
+        SkillShakeBefore();
+        PlaySkillAnimation();
+        MoveToTarget();
     }
 
     public void SkillShakeBefore()
     {
-        
+        this.SkillState = E_SkillState.ShakeBefore;
     }
     
     public void PlaySkillAnimation()
@@ -49,7 +52,7 @@
     
     public void SkillShakeAfter()
     {
-        
+        this.SkillState = E_SkillState.ShakeAfter;
     }
     public void MoveBack()
     {
