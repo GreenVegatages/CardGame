@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WorldManager 
 {
-    private static BattleWorld _battleWorld;
+    public static BattleWorld BattleWorld { get;private set; }
     
     /// <summary>
     /// 初始化
@@ -18,7 +18,7 @@ public class WorldManager
     /// </summary>
     public static void DestoryWorld()
     {
-        _battleWorld?.OnDestroyWorld();
+        BattleWorld?.OnDestroyWorld();
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ public class WorldManager
     /// </summary>
     public static void OnUpdate()
     {
-        _battleWorld?.OnUpdate();
+        BattleWorld?.OnUpdate();
     }
     
     
@@ -45,7 +45,7 @@ public class WorldManager
     /// <param name="enemy_Data">敌人阵容数据</param>
     public static void CreateBattleWorld(List<HeroData> player_Data,List<HeroData> enemy_Data)
     {
-        _battleWorld = new BattleWorld();
-        _battleWorld.OnCreateWorld(player_Data,enemy_Data);
+        BattleWorld = new BattleWorld();
+        BattleWorld.OnCreateWorld(player_Data,enemy_Data);
     }
 }

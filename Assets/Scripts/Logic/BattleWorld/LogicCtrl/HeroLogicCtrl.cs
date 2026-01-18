@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
@@ -68,5 +69,19 @@ public class HeroLogicCtrl : ILogicBehaviour
         }
     }
     
+    public List<HeroLoigc> GetHeroListByTeam(HeroLoigc attacker,E_HeroTeam attackTeam)
+    {
+        switch (attacker.Team)
+        {
+
+            case E_HeroTeam.Player:
+                return attackTeam == E_HeroTeam.Player ? Player_Logic_List : Enemy_Logic_List;
+                
+            case E_HeroTeam.Enemy:
+                return attackTeam == E_HeroTeam.Player ? Player_Logic_List : Enemy_Logic_List;
+
+        }
+        return null;
+    }
     
 }

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2046.4
     height: 1052.8
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 498}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 119
+  controlID: 25
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -739,31 +739,6 @@ MonoBehaviour:
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 728
-    - m_Data: 47286
-    - m_Data: 47288
-    - m_Data: 47290
-    - m_Data: 47292
-    - m_Data: 47294
-    - m_Data: 47296
-    - m_Data: 47298
-    - m_Data: 47300
-    - m_Data: 47302
-    - m_Data: 47304
-    - m_Data: 47306
-    - m_Data: 47308
-    - m_Data: 47310
-    - m_Data: 47312
-    - m_Data: 47314
-    - m_Data: 47316
-    - m_Data: 47318
-    - m_Data: 47320
-    - m_Data: 47322
-    - m_Data: 47324
-    - m_Data: 47326
-    - m_Data: 47328
-    - m_Data: 47330
-    - m_Data: 47332
-    - m_Data: 47334
     - m_Data: 47336
     - m_Data: 47338
     - m_Data: 47340
@@ -787,6 +762,32 @@ MonoBehaviour:
     - m_Data: 47376
     - m_Data: 47378
     - m_Data: 47380
+    - m_Data: 47382
+    - m_Data: 47384
+    - m_Data: 47386
+    - m_Data: 47388
+    - m_Data: 47390
+    - m_Data: 47392
+    - m_Data: 47394
+    - m_Data: 47396
+    - m_Data: 47398
+    - m_Data: 47400
+    - m_Data: 47402
+    - m_Data: 47404
+    - m_Data: 47406
+    - m_Data: 47408
+    - m_Data: 47410
+    - m_Data: 47412
+    - m_Data: 47414
+    - m_Data: 47416
+    - m_Data: 47418
+    - m_Data: 47420
+    - m_Data: 47422
+    - m_Data: 47424
+    - m_Data: 47426
+    - m_Data: 47428
+    - m_Data: 47430
+    - m_Data: 47432
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -815,37 +816,12 @@ MonoBehaviour:
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 47530
+    - m_Data: -7962
     m_LastClickedID:
-      m_Data: 47530
+      m_Data: -7962
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 728
-    - m_Data: 47286
-    - m_Data: 47288
-    - m_Data: 47290
-    - m_Data: 47292
-    - m_Data: 47294
-    - m_Data: 47296
-    - m_Data: 47298
-    - m_Data: 47300
-    - m_Data: 47302
-    - m_Data: 47304
-    - m_Data: 47306
-    - m_Data: 47308
-    - m_Data: 47310
-    - m_Data: 47312
-    - m_Data: 47314
-    - m_Data: 47316
-    - m_Data: 47318
-    - m_Data: 47320
-    - m_Data: 47322
-    - m_Data: 47324
-    - m_Data: 47326
-    - m_Data: 47328
-    - m_Data: 47330
-    - m_Data: 47332
-    - m_Data: 47334
     - m_Data: 47336
     - m_Data: 47338
     - m_Data: 47340
@@ -869,6 +845,32 @@ MonoBehaviour:
     - m_Data: 47376
     - m_Data: 47378
     - m_Data: 47380
+    - m_Data: 47382
+    - m_Data: 47384
+    - m_Data: 47386
+    - m_Data: 47388
+    - m_Data: 47390
+    - m_Data: 47392
+    - m_Data: 47394
+    - m_Data: 47396
+    - m_Data: 47398
+    - m_Data: 47400
+    - m_Data: 47402
+    - m_Data: 47404
+    - m_Data: 47406
+    - m_Data: 47408
+    - m_Data: 47410
+    - m_Data: 47412
+    - m_Data: 47414
+    - m_Data: 47416
+    - m_Data: 47418
+    - m_Data: 47420
+    - m_Data: 47422
+    - m_Data: 47424
+    - m_Data: 47426
+    - m_Data: 47428
+    - m_Data: 47430
+    - m_Data: 47432
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -896,8 +898,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 47530
-    m_LastClickedInstanceID: 47530
+    - m_Data: -7962
+    m_LastClickedInstanceID: -7962
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
