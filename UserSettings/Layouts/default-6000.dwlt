@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2046.4
     height: 1052.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 498}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 25
+  controlID: 119
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -590,19 +590,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -61416
-      - m_Data: -61198
-      - m_Data: -54540
-      - m_Data: -46944
-      - m_Data: -46938
       - m_Data: -1294
-      - m_Data: 46696
-      - m_Data: 46728
-      - m_Data: 46732
-      - m_Data: 46770
-      - m_Data: 46922
-      - m_Data: 46978
-      - m_Data: 47096
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -728,7 +716,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Logic/Timer
+    - Assets/Scripts/Logic/SkillSystem
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -751,21 +739,6 @@ MonoBehaviour:
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 728
-    - m_Data: 47256
-    - m_Data: 47258
-    - m_Data: 47260
-    - m_Data: 47262
-    - m_Data: 47264
-    - m_Data: 47266
-    - m_Data: 47268
-    - m_Data: 47270
-    - m_Data: 47272
-    - m_Data: 47274
-    - m_Data: 47276
-    - m_Data: 47278
-    - m_Data: 47280
-    - m_Data: 47282
-    - m_Data: 47284
     - m_Data: 47286
     - m_Data: 47288
     - m_Data: 47290
@@ -799,6 +772,21 @@ MonoBehaviour:
     - m_Data: 47346
     - m_Data: 47348
     - m_Data: 47350
+    - m_Data: 47352
+    - m_Data: 47354
+    - m_Data: 47356
+    - m_Data: 47358
+    - m_Data: 47360
+    - m_Data: 47362
+    - m_Data: 47364
+    - m_Data: 47366
+    - m_Data: 47368
+    - m_Data: 47370
+    - m_Data: 47372
+    - m_Data: 47374
+    - m_Data: 47376
+    - m_Data: 47378
+    - m_Data: 47380
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -827,27 +815,12 @@ MonoBehaviour:
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 63576
+    - m_Data: 47530
     m_LastClickedID:
-      m_Data: 63576
+      m_Data: 47530
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 728
-    - m_Data: 47256
-    - m_Data: 47258
-    - m_Data: 47260
-    - m_Data: 47262
-    - m_Data: 47264
-    - m_Data: 47266
-    - m_Data: 47268
-    - m_Data: 47270
-    - m_Data: 47272
-    - m_Data: 47274
-    - m_Data: 47276
-    - m_Data: 47278
-    - m_Data: 47280
-    - m_Data: 47282
-    - m_Data: 47284
     - m_Data: 47286
     - m_Data: 47288
     - m_Data: 47290
@@ -881,6 +854,21 @@ MonoBehaviour:
     - m_Data: 47346
     - m_Data: 47348
     - m_Data: 47350
+    - m_Data: 47352
+    - m_Data: 47354
+    - m_Data: 47356
+    - m_Data: 47358
+    - m_Data: 47360
+    - m_Data: 47362
+    - m_Data: 47364
+    - m_Data: 47366
+    - m_Data: 47368
+    - m_Data: 47370
+    - m_Data: 47372
+    - m_Data: 47374
+    - m_Data: 47376
+    - m_Data: 47378
+    - m_Data: 47380
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -908,8 +896,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 63576
-    m_LastClickedInstanceID: 63576
+    - m_Data: 47530
+    m_LastClickedInstanceID: 47530
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
