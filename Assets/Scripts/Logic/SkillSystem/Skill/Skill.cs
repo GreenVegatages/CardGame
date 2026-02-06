@@ -8,6 +8,7 @@ public class Skill
     public E_SkillState SkillState { get;private set; }
     
     public SkillConfig SkillConfig { get;private set; }
+    
     public Skill(int skillId, LogicObject skillOwner, bool isNormalAtk)
     {
         this.SkillId = skillId;
@@ -78,12 +79,16 @@ public class Skill
         {
             var effect = ResManager.Instance.LoadPrefab<SkillEffect>
                 (AssetPathConfig.SKILLEFFECT+this.SkillConfig.skillEffect);
-            
+            //effect.SetEffectPosition();
         }
+        
+        //技能特效
+        
+        
     }
     public void CauseDamage()
     {
-        
+        //BattleRule
     }
     public void AdditionalBuff()
     {
