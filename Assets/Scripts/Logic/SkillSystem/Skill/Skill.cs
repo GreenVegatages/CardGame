@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class Skill
 {
@@ -66,29 +67,59 @@ public class Skill
     }
     public void SkillTrigger()
     {
-        CreateSkillEffect();
         CauseDamage();
         AdditionalBuff();
         SkillShakeAfter();
         MoveBack();
     }
-    public void CreateSkillEffect()
+    public void CreateSkillEffect(List<HeroLoigc> targetList = null)
     {
+        
+#if RENDER_LOGIC
         //击中特效
         if (!string.IsNullOrEmpty(this.SkillConfig.skillEffect) )
         {
             var effect = ResManager.Instance.LoadPrefab<SkillEffect>
-                (AssetPathConfig.SKILLEFFECT+this.SkillConfig.skillEffect);
+                (AssetPathConfig.SKILLEFFECT+this.SkillConfig.hitEffect);
+            for (int i = 0; i < targetList.Count; i++)
+            {
+                effect.SetEffectPosition(targetList[i].LogicPosition);
+            }
             //effect.SetEffectPosition();
         }
         
         //技能特效
+        if (!string.IsNullOrEmpty(this.SkillConfig.skillEffect) )
+        {
+            var effect = ResManager.Instance.LoadPrefab<SkillEffect>
+                (AssetPathConfig.SKILLEFFECT+this.SkillConfig.skillEffect);
+            if (SKillOwner.Team == E_HeroTeam.Enemy)
+            {
+                var angle = effect.transform.eulerAngles;
+                angle.y = 180;
+                effect.transform.eulerAngles = angle;
+            }
+
+            if (SkillConfig.skillAttackType == E_SkillAttackType.All)
+            {
+                effect.SetEffectPosition(VInt3.zero);
+            }
+            else
+            {
+                effect.SetEffectPosition(SKillOwner.LogicPosition);
+            }
+            
+        }
+#endif
         
-        
+
     }
     public void CauseDamage()
     {
         //BattleRule
+        var targetList = BattleRule.GetAttackListByAttackType(SkillConfig.skillAttackType,WorldManager.BattleWorld.heroLogicCtrl.GetHeroListByTeam(SKillOwner,
+            (E_HeroTeam)SkillConfig.targetType),SKillOwner.Data.seatid);
+        CreateSkillEffect(targetList);
     }
     public void AdditionalBuff()
     {
